@@ -1,0 +1,68 @@
+=pod
+
+=encoding UTF-8
+
+=head1 NAME
+
+IPC::Pidfile - run only instance of a program at a time
+
+=head1 VERSION
+
+version 0.01
+
+=head1 SYNOPSIS
+
+Just import the module:
+
+  #!/usr/bin/env perl
+  use IPC::Pidfile;
+
+  ... # program code here
+
+This will create a pidfile for the program and clear it up when the program is
+finished.
+
+=head1 DESCRIPTION
+
+C<IPC::Pidfile> is a module for use with Perl programs when you only want one
+instance of the script to run at a time. It should work for you if:
+
+=over 4
+
+=item *
+
+You are OK with the pidfile being created in the same directory as the
+script
+
+=item *
+
+You are not using an obscure OS. (Linux, BSD, OSX and Windows should be OK,
+see CPANTESTERS).
+
+=item *
+
+Your program is not using signal handlers for C<SIGINT> and C<SIGTERM>.
+C<IPC::Pidfile> uses these to clear up the pidfile at the end of the process
+
+=back
+
+=head1 BUGS/ISSUES
+
+This is an early release and may contain bugs. To run C<IPC::Pidfile> in
+debug mode, create the environment variable C<IPC_PIDFILE_DEBUG>:
+
+  IPC_PIDFILE_DEBUG=1 ./path/to/program
+
+=head1 AUTHOR
+
+David Farrell <dfarrell@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is Copyright (c) 2015 by David Farrell.
+
+This is free software, licensed under:
+
+  The (two-clause) FreeBSD License
+
+=cut
