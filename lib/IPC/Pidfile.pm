@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package IPC::Pidfile;
 
-# ABSTRACT: run only instance of a program at a time
+# ABSTRACT: run only one instance of a program at a time
 our $DEBUG = $ENV{IPC_PIDFILE_DEBUG};
 our $PID = pid();
 

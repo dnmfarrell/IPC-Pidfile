@@ -4,7 +4,7 @@
 
 =head1 NAME
 
-IPC::Pidfile - run only instance of a program at a time
+IPC::Pidfile - run only one instance of a program at a time
 
 =head1 VERSION
 
