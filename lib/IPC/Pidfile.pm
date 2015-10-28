@@ -13,6 +13,11 @@ pidfile_lock();
 
 END { pidfile_clear() }
 
+=head1 WARNING
+
+This module has a race condition as it attempts to remove the pidfile. It
+might be better to use C<IPC::Lockfile>.
+
 =head1 SYNOPSIS
 
 Just import the module:
@@ -50,6 +55,8 @@ C<IPC::Pidfile> uses these to clear up the pidfile at the end of the process
 =back
 
 =head1 BUGS/ISSUES
+
+Race condition (see L<#WARNING>).
 
 This is an early release and may contain bugs. To run C<IPC::Pidfile> in
 debug mode, create the environment variable C<IPC_PIDFILE_DEBUG>:

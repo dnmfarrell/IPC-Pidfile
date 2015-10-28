@@ -5,4 +5,4 @@ use lib 'lib';
 use IPC::Pidfile;
 
 # dummy program for testing IPC::Pidfile
-sleep(60);
+sleep(10);
